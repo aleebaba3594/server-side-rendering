@@ -1,0 +1,54 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="form-body">
+      <div class="row">
+        <div class="form-holder">
+          <div class="form-content">
+            <div class="form-items">
+              <h3>Search user</h3>
+              <form
+                class="requires-validation"
+                action="/searchStudent"
+                novalidate
+              >
+
+                <div class="col-md-12">
+                  <input
+                    class="form-control"
+                    type="email"
+                    name="email"
+                    placeholder="E-mail Address"
+                  />
+                </div>
+
+                <div class="form-button mt-3">
+                  <button
+                    id="submit"
+                    type="submit"
+                    class="btn btn-primary"
+                  >Search User</button>
+                  <a href="/">go back to home</a>
+                </div>
+                {{#if message}}
+                  <h3>User Found</h3>
+                {{/if}}
+
+                {{#if chkmessage}}
+                  <h3>User not found</h3>
+                {{/if}}
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

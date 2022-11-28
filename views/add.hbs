@@ -1,0 +1,112 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="form-body">
+      <div class="row">
+        <div class="form-holder">
+          <div class="form-content">
+            <div class="form-items">
+              <h3>add user</h3>
+              <p>Fill in the data below.</p>
+              <form class="requires-validation" action="/addStudent" novalidate>
+
+                <div class="col-md-12">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="name"
+                    placeholder="Full Name"
+                  />
+                </div>
+
+                <div class="col-md-12">
+                  <input
+                    class="form-control"
+                    type="email"
+                    name="email"
+                    placeholder="E-mail Address"
+                  />
+                </div>
+
+                <div class="col-md-12">
+                  <input
+                    class="form-control"
+                    type="password"
+                    name="password"
+                    placeholder="Password"
+                  />
+                </div>
+
+                <div class="col-md-12 mt-3">
+                  <label class="mb-3 mr-1" for="gender">Gender: </label>
+
+                  <input
+                    type="radio"
+                    class="btn-check"
+                    name="gender"
+                    id="male"
+                    value="male"
+                    autocomplete="off"
+                    required
+                  />
+                  <label
+                    class="btn btn-sm btn-outline-secondary"
+                    for="male"
+                  >Male</label>
+
+                  <input
+                    type="radio"
+                    class="btn-check"
+                    name="gender"
+                    value="female"
+                    id="female"
+                    autocomplete="off"
+                    required
+                  />
+                  <label
+                    class="btn btn-sm btn-outline-secondary"
+                    for="female"
+                  >Female</label>
+
+                  <input
+                    type="radio"
+                    class="btn-check"
+                    name="gender"
+                    id="secret"
+                    value="other"
+                    autocomplete="off"
+                    required
+                  />
+                  <label
+                    class="btn btn-sm btn-outline-secondary"
+                    for="secret"
+                  >Other</label>
+                </div>
+
+                <div class="form-button mt-3">
+                  <button id="submit" type="submit" class="btn btn-primary">Add
+                    User</button>
+                  <a href="/">go back to home</a>
+                </div>
+                {{#if message}}
+                  <h3>User Inserted</h3>
+                {{/if}}
+
+                {{#if chkmessage}}
+                  <h3>User is already registered with the same email</h3>
+                {{/if}}
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
