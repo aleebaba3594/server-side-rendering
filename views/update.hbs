@@ -1,0 +1,174 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="form-body">
+      <div class="row">
+        <div class="form-holder">
+          <div class="form-content">
+            <div class="form-items">
+              <h3>Search user</h3>
+              <form
+                class="requires-validation"
+                action="/updateSearchStudent"
+                novalidate
+              >
+
+                <div class="col-md-12">
+                  <input
+                    class="form-control"
+                    type="email"
+                    name="email"
+                    placeholder="E-mail Address"
+                  />
+                </div>
+
+                <div class="form-button mt-3">
+                  <button
+                    id="submit"
+                    type="submit"
+                    class="btn btn-primary"
+                  >Search User</button>
+                  <a href="/">go back to home</a>
+                </div>
+
+                {{#if chkmessage}}
+                  <h3>User not found</h3>
+                {{/if}}
+                {{#if updateMessage}}
+                  <h3>User Updated!</h3>
+                {{/if}}
+                {{#if updateMessage2}}
+                  <h3>User not Updated!</h3>
+                {{/if}}
+              </form>
+
+            </div>
+
+          </div>
+          {{#if message}}
+            <div class="form-body" style="margin-top: -100px;">
+              <div class="row">
+                <div class="form-holder">
+                  <div class="form-content">
+                    <div class="form-items">
+                      <h3>Update user</h3>
+                      <p>Fill in the data below.</p>
+                      {{#data}}
+
+                        <form
+                          class="requires-validation"
+                          action="/updateStudent"
+                          novalidate
+                        >
+
+                          <div class="col-md-12">
+                            <input
+                              class="form-control"
+                              type="text"
+                              name="name"
+                              placeholder="Full Name"
+                              value="{{fullname}}"
+                            />
+                          </div>
+
+                          <div class="col-md-12">
+                            <input
+                              class="form-control"
+                              type="email"
+                              name="email"
+                              placeholder="E-mail Address"
+                              value="{{email}}"
+                              readonly
+                            />
+                          </div>
+
+                          <div class="col-md-12">
+                            <input
+                              class="form-control"
+                              type="password"
+                              name="password"
+                              placeholder="Password"
+                              value="{{password}}"
+                              readonly
+                            />
+                          </div>
+
+                          <div class="col-md-12 mt-3">
+                            <label class="mb-3 mr-1" for="gender">Gender:
+                            </label>
+
+                            <input
+                              type="radio"
+                              class="btn-check"
+                              name="gender"
+                              id="male"
+                              value="male"
+                              autocomplete="off"
+                              required
+                            />
+                            <label
+                              class="btn btn-sm btn-outline-secondary"
+                              for="male"
+                            >Male</label>
+
+                            <input
+                              type="radio"
+                              class="btn-check"
+                              name="gender"
+                              value="female"
+                              id="female"
+                              autocomplete="off"
+                              required
+                            />
+                            <label
+                              class="btn btn-sm btn-outline-secondary"
+                              for="female"
+                            >Female</label>
+
+                            <input
+                              type="radio"
+                              class="btn-check"
+                              name="gender"
+                              id="secret"
+                              value="other"
+                              autocomplete="off"
+                              required
+                            />
+                            <label
+                              class="btn btn-sm btn-outline-secondary"
+                              for="secret"
+                            >Other</label>
+                          </div>
+
+                          <div class="form-button mt-3">
+                            <button
+                              id="submit"
+                              type="submit"
+                              class="btn btn-primary"
+                            >update User</button>
+                            <a href="/">go back to home</a>
+                          </div>
+
+                        </form>
+                      {{/data}}
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          {{/if}}
+        </div>
+      </div>
+
+    </div>
+
+  </body>
+</html>
